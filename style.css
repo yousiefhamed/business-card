@@ -1,0 +1,175 @@
+/* CSS Reset */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  display: inline-block;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  border: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-size: 1.6rem;
+  font-family: "Courier New", Courier, monospace;
+}
+
+/* End CSS Reset */
+
+.container {
+  background-color: rgba(204, 255, 204, 0.8);
+  background-image: radial-gradient(#000000 0.75px, #ccffcc 0.75px);
+  background-size: 15px 15px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lights-control {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  position: absolute;
+  top: 2rem;
+}
+.lights-label {
+  width: 4.2rem;
+  height: 2.2rem;
+  border-radius: 1.5rem;
+  background-color: #000;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  padding: 0.3rem 0.4rem;
+}
+.lights-label::after {
+  content: "";
+  display: block;
+  width: 1.6rem;
+  height: 1.6rem;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: 0.3s;
+}
+.lights-input {
+  display: none;
+}
+.lights-input:checked + .lights-label {
+  background-color: #fff;
+}
+.lights-input:checked + .lights-label::after {
+  transform: translateX(2.1rem);
+  background-color: greenyellow;
+}
+.profile-card {
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  min-width: 35rem;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+}
+.lights {
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+}
+.container:has(.lights-input:checked) .lights {
+  opacity: 1;
+  visibility: visible;
+}
+.blue-light {
+  animation: blue-party 0.3s infinite alternate;
+}
+@keyframes blue-party {
+  from {
+    fill: #ff8181;
+  }
+  to {
+    fill: #000958;
+  }
+}
+.red-light {
+  animation: red-party 0.3s infinite alternate;
+}
+@keyframes red-party {
+  from {
+    fill: #000958;
+  }
+  to {
+    fill: #ff8181;
+  }
+}
+.top {
+  height: 10rem;
+  background-color: #ffffff;
+  opacity: 0.8;
+  background-image: repeating-radial-gradient(
+      circle at 0 0,
+      transparent 0,
+      #ffffff 40px
+    ),
+    repeating-linear-gradient(#40ff0055, #40ff00);
+}
+.middle {
+  margin: 0 auto;
+  text-align: center;
+  margin-top: -6rem;
+  z-index: 1;
+}
+.pic {
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  border: 0.4rem solid #fff;
+}
+.title {
+  font-size: 2.2rem;
+}
+.profession {
+  font-size: 1.6rem;
+}
+.bottom {
+  display: flex;
+  margin-top: 3rem;
+  border-top: 0.1rem solid #c4c4c4;
+}
+.column {
+  padding: 1.8rem 1.5rem;
+  text-align: center;
+}
+.column:nth-child(2) {
+  border-right: 0.1rem solid #c4c4c4;
+  border-left: 0.1rem solid #c4c4c4;
+}
+.icon {
+  width: 2rem;
+  height: 2rem;
+}
+.username {
+  font-size: 1.2rem;
+}
